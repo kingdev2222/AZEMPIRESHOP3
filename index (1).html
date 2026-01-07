@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MSE Empire Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= BANNER ================= -->
+<section class="banner">
+  <img src="banner5.png" alt="Mse Empire Shop Banner">
+</section>
+
+<!-- ================= APPS ================= -->
+<section class="container">
+
+  <!-- KING TV -->
+  <div class="app-card">
+    <img src="logo1.png">
+    <h2>King TV</h2>
+    <p>Live TV, Movies & Sports</p>
+
+    <a href="https://cutt.ly/king200" class="btn" target="_blank">⬇ Download App</a>
+    <button class="btn" onclick="openPackage('KINGTV')">📦 View Packages</button>
+    <a href="https://t.me/+gabhQO4OjT1lMDY1" class="btn outline" target="_blank">
+      📞 King TV Support Group
+    </a>
+  </div>
+
+  <!-- PANDAFLIX -->
+  <div class="app-card">
+    <img src="logo2.png">
+    <h2>PandaFlix</h2>
+    <p>OTT Premium IPTV</p>
+
+    <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
+    <button class="btn" onclick="openPackage('PANDAFLIX')">📦 View Packages</button>
+    <a href="https://chat.whatsapp.com/CKBFhfqOBmq82v73gr4A6F" class="btn outline" target="_blank">
+      📞 PandaFlix Support Group
+    </a>
+  </div>
+
+  <!-- MYIPTV4K -->
+  <div class="app-card">
+    <img src="logo3.png">
+    <h2>MYIPTV4K</h2>
+    <p>Live TV, Movies & Sports</p>
+
+    <a href="https://bit.ly/myiptv_21" class="btn" target="_blank">⬇ Download App</a>
+    <button class="btn" onclick="openPackage('MYIPTV4K')">📦 View Packages</button>
+    <a href="https://t.me/+w4xaeKJIzMgxNGFl" class="btn outline" target="_blank">
+      📞 MYIPTV4K Support Group
+    </a>
+  </div>
+
+  <!-- TVTECH PRO -->
+  <div class="app-card">
+    <img src="logo4.png">
+    <h2>TVTech Pro</h2>
+    <p>OTT IPTV Premium</p>
+
+    <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
+    <button class="btn" onclick="openPackage('TVTECHPRO')">📦 View Packages</button>
+    <a href="https://chat.whatsapp.com/Js2pnIdeAMzIETdRlnE6BR" class="btn outline" target="_blank">
+      📞 TVTech Pro Support Group
+    </a>
+  </div>
+
+</section>
+
+<!-- ================= PAYMENT ================= -->
+<section class="payment">
+  <h2>💳 Payment Method</h2>
+  <a href="https://wa.me/60129876368" class="btn" target="_blank">
+    💬 Online Payment (WhatsApp)
+  </a>
+  <button class="btn" onclick="openQR()">📱 QR Pay</button>
+</section>
+
+<!-- ================= RESELLER ================= -->
+<section class="reseller">
+  <h2>🤝 Become a Reseller</h2>
+  <p>Earn income by selling our IPTV</p>
+
+  <a href="https://wa.me/60129876368?text=Hi%20I%20want%20to%20be%20a%20reseller"
+     class="btn reseller-btn"
+     target="_blank">
+    💼 I Want to Be a Reseller
+  </a>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials">
+  <h2>⭐ Customer Reviews</h2>
+
+  <div class="review-grid">
+    <div class="review-card">
+      <div class="review-text">
+        Very stable IPTV, clear HD channels. Been using more than 6 months already 👍
+      </div>
+      <div class="review-user">— Ahmad, Malaysia 🇲🇾</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-text">
+        Fast response admin, easy setup on Android Box. Worth the price!
+      </div>
+      <div class="review-user">— Haziq, Brunei 🇧🇳</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-text">
+        Sports channels smooth, no lag during live matches. Recommended seller.
+      </div>
+      <div class="review-user">— Daniel, Singapore 🇸🇬</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OPERATION HOURS ================= -->
+<section class="hours">
+  <h2>🕘 Operation Hours</h2>
+  <p>Daily • 9:00 AM – 11:00 PM</p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  © 2026 Mse Empire Shop — All Rights Reserved
+</footer>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a href="https://wa.me/60129876368"
+   class="floating-whatsapp"
+   target="_blank"
+   title="Chat with Admin on WhatsApp">
+  💬
+</a>
+
+<!-- ================= PACKAGE MODAL ================= -->
+<div class="modal" id="packageModal">
+  <div class="modal-box">
+    <h2 id="appTitle"></h2>
+    <ul id="priceList"></ul>
+    <button class="btn outline" onclick="closePackage()">Close</button>
+  </div>
+</div>
+
+<!-- ================= QR MODAL ================= -->
+<div class="modal" id="qrModal">
+  <div class="modal-box">
+    <h2>📲 Scan QR to Pay</h2>
+    <img src="qr.png" class="qr-img">
+    <button class="btn outline" onclick="closeQR()">Done</button>
+  </div>
+</div>
+
+<script>
+const prices = {
+  KINGTV: [
+    { name: "1 Month", price: "RM15" },
+    { name: "3 Months", price: "RM38" },
+    { name: "6 Months", price: "RM70" },
+    { name: "1 Year", price: "RM110" },
+    { name: "4 Years", price: "RM300" }
+  ],
+  PANDAFLIX: [
+    { name: "1 Month", price: "RM10" },
+    { name: "3 Months", price: "RM28" },
+    { name: "6 Months", price: "RM55" },
+    { name: "1 Year", price: "RM100" }
+  ],
+  MYIPTV4K: [
+    { name: "3 Months", price: "RM110" },
+    { name: "6 Months", price: "RM170" },
+    { name: "1 Year", price: "RM270" }
+  ],
+  TVTECHPRO: [
+    { name: "1 Device • 3 Months", price: "RM35" },
+    { name: "1 Device • 6 Months", price: "RM60" },
+    { name: "1 Device • 1 Year", price: "RM110" },
+    { name: "2 Devices • 3 Months", price: "RM55" },
+    { name: "2 Devices • 6 Months", price: "RM105" },
+    { name: "2 Devices • 1 Year", price: "RM200" }
+  ]
+};
+
+function openPackage(app) {
+  document.getElementById("packageModal").style.display = "flex";
+  document.getElementById("appTitle").innerText = app + " Packages";
+  const list = document.getElementById("priceList");
+  list.innerHTML = "";
+  prices[app].forEach(pkg => {
+    const li = document.createElement("li");
+    li.innerHTML = `${pkg.name} — <strong>${pkg.price}</strong>`;
+    list.appendChild(li);
+  });
+}
+
+function closePackage() {
+  document.getElementById("packageModal").style.display = "none";
+}
+
+function openQR() {
+  document.getElementById("qrModal").style.display = "flex";
+}
+
+function closeQR() {
+  document.getElementById("qrModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
