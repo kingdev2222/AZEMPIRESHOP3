@@ -21,7 +21,6 @@
     <img src="logo1.png">
     <h2>King TV</h2>
     <p>Live TV, Movies & Sports</p>
-
     <a href="https://cutt.ly/king200" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('KINGTV')">📦 View Packages</button>
     <a href="https://t.me/+gabhQO4OjT1lMDY1" class="btn outline" target="_blank">
@@ -34,7 +33,6 @@
     <img src="logo2.png">
     <h2>PandaFlix</h2>
     <p>OTT Premium IPTV</p>
-
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('PANDAFLIX')">📦 View Packages</button>
     <a href="https://chat.whatsapp.com/CKBFhfqOBmq82v73gr4A6F" class="btn outline" target="_blank">
@@ -47,7 +45,6 @@
     <img src="logo3.png">
     <h2>MYIPTV4K</h2>
     <p>Live TV, Movies & Sports</p>
-
     <a href="https://bit.ly/myiptv_21" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('MYIPTV4K')">📦 View Packages</button>
     <a href="https://t.me/+w4xaeKJIzMgxNGFl" class="btn outline" target="_blank">
@@ -60,7 +57,6 @@
     <img src="logo4.png">
     <h2>TVTech Pro</h2>
     <p>OTT IPTV Premium</p>
-
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('TVTECHPRO')">📦 View Packages</button>
     <a href="https://chat.whatsapp.com/Js2pnIdeAMzIETdRlnE6BR" class="btn outline" target="_blank">
@@ -83,7 +79,6 @@
 <section class="reseller">
   <h2>🤝 Become a Reseller</h2>
   <p>Earn income by selling our IPTV</p>
-
   <a href="https://wa.me/60129876368?text=Hi%20I%20want%20to%20be%20a%20reseller"
      class="btn reseller-btn"
      target="_blank">
@@ -94,7 +89,6 @@
 <!-- ================= TESTIMONIALS ================= -->
 <section class="testimonials">
   <h2>⭐ Customer Reviews</h2>
-
   <div class="review-grid">
     <div class="review-card">
       <div class="review-text">
@@ -102,14 +96,12 @@
       </div>
       <div class="review-user">— Ahmad, Malaysia 🇲🇾</div>
     </div>
-
     <div class="review-card">
       <div class="review-text">
         Fast response admin, easy setup on Android Box. Worth the price!
       </div>
       <div class="review-user">— Haziq, Brunei 🇧🇳</div>
     </div>
-
     <div class="review-card">
       <div class="review-text">
         Sports channels smooth, no lag during live matches. Recommended seller.
@@ -119,13 +111,12 @@
   </div>
 </section>
 
-<!-- ================= OPERATION HOURS ================= -->
+<!-- ================= HOURS ================= -->
 <section class="hours">
   <h2>🕘 Operation Hours</h2>
   <p>Daily • 9:00 AM – 11:00 PM</p>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   © 2026 Mse Empire Shop — All Rights Reserved
 </footer>
@@ -156,7 +147,40 @@
   </div>
 </div>
 
+<!-- ================= SCRIPT ================= -->
 <script>
+/* ================= TOYYIBPAY LINKS ================= */
+/* ⚠️ REPLACE THESE WITH YOUR REAL LINKS */
+const paymentLinks = {
+  KINGTV: {
+    "1 Month": "https://toyyibpay.com/KINGTV-1M",
+    "3 Months": "https://toyyibpay.com/KINGTV-3M",
+    "6 Months": "https://toyyibpay.com/KINGTV-6M",
+    "1 Year": "https://toyyibpay.com/KINGTV-1Y",
+    "4 Years": "https://toyyibpay.com/KINGTV-4Y"
+  },
+  PANDAFLIX: {
+    "1 Month": "https://toyyibpay.com/PANDA-1M",
+    "3 Months": "https://toyyibpay.com/PANDA-3M",
+    "6 Months": "https://toyyibpay.com/PANDA-6M",
+    "1 Year": "https://toyyibpay.com/PANDA-1Y"
+  },
+  MYIPTV4K: {
+    "3 Months": "https://toyyibpay.com/MYIPTV-3M",
+    "6 Months": "https://toyyibpay.com/MYIPTV-6M",
+    "1 Year": "https://toyyibpay.com/MYIPTV-1Y"
+  },
+  TVTECHPRO: {
+    "1 Device • 3 Months": "https://toyyibpay.com/TVTECH-1D-3M",
+    "1 Device • 6 Months": "https://toyyibpay.com/TVTECH-1D-6M",
+    "1 Device • 1 Year": "https://toyyibpay.com/TVTECH-1D-1Y",
+    "2 Devices • 3 Months": "https://toyyibpay.com/TVTECH-2D-3M",
+    "2 Devices • 6 Months": "https://toyyibpay.com/TVTECH-2D-6M",
+    "2 Devices • 1 Year": "https://toyyibpay.com/TVTECH-2D-1Y"
+  }
+};
+
+/* ================= PRICE LIST ================= */
 const prices = {
   KINGTV: [
     { name: "1 Month", price: "RM15" },
@@ -186,14 +210,36 @@ const prices = {
   ]
 };
 
+/* ================= FUNCTIONS ================= */
 function openPackage(app) {
-  document.getElementById("packageModal").style.display = "flex";
-  document.getElementById("appTitle").innerText = app + " Packages";
-  const list = document.getElementById("priceList");
+  const modal = document.getElementById("packageModal");
+  const title = document.getElementById("appTitle");
+  const list  = document.getElementById("priceList");
+
+  modal.style.display = "flex";
+  title.innerText = app + " Packages";
   list.innerHTML = "";
+
   prices[app].forEach(pkg => {
+    const payLink = paymentLinks?.[app]?.[pkg.name] || "#";
+
     const li = document.createElement("li");
-    li.innerHTML = `${pkg.name} — <strong>${pkg.price}</strong>`;
+    li.innerHTML = `
+      <span>
+        ${pkg.name}<br>
+        <strong>${pkg.price}</strong>
+      </span>
+      <button class="btn small">Pay Now</button>
+    `;
+
+    li.querySelector("button").addEventListener("click", () => {
+      if (!payLink || payLink === "#") {
+        alert("Payment link not set yet for this package.");
+        return;
+      }
+      window.location.href = payLink;
+    });
+
     list.appendChild(li);
   });
 }
@@ -213,9 +259,3 @@ function closeQR() {
 
 </body>
 </html>
-
-
-
-
-
-
